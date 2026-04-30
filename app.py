@@ -110,7 +110,7 @@ def search_web(query, limit=10):
             "q": query,
             "num": min(limit, 10),
         },
-        timeout=8,
+        timeout=20,
     )
     if not response.ok:
         try:
