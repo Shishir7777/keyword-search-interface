@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Keyword Search</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+    <main class="search-shell">
+      <section class="brand-area" aria-label="Search">
+        <h1>Keyword Search</h1>
+        <form id="search-form" class="search-form">
+          <div class="mode-switch" role="tablist" aria-label="Search mode">
+            <button type="button" class="mode-button active" data-mode="local">Local</button>
+            <button type="button" class="mode-button" data-mode="web">Web</button>
+          </div>
+          <div class="search-box">
+            <input id="query" name="q" type="search" autocomplete="off" placeholder="Search lyrics or the web" autofocus>
+            <button type="submit">Search</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="status-line" id="status" aria-live="polite"></section>
+      <section class="results" id="results" aria-label="Search results"></section>
+    </main>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+URL of web service:
+TBD - replace this with your deployed URL before submitting.
+
+Implementation summary:
+This project is a Flask web application with one search interface and two modes: Web and Local. The Web mode uses SerpApi's Google Search API 
+and displays result titles, snippets, and clickable URLs. The Local mode indexes the lyrics.csv dataset with SQLite FTS5. Each song is treated
+as one document with rank, title, year, artist, and lyrics fields. Local search displays title, rank, year, artist, and a dynamically 
+generated keyword-in-context snippet. Clicking a song title opens a song detail page that shows the full song information and lyrics.
+
+Observations and comments:
+SQLite FTS5 was chosen because it is lightweight, open source, and easy to deploy compared with a full Solr or Elasticsearch service.
+Its built-in snippet function provides dynamic result snippets similar to the snippets displayed by major search engines. The web API key 
+is read from the BING_SEARCH_API_KEY environment variable so the source code can be submitted without exposing private credentials.

@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ song["title"] }} - Keyword Search</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+    <main class="detail-shell">
+      <a class="back-link" href="{{ url_for('index') }}">Back to search</a>
+      <article class="song-detail">
+        <p class="meta">Rank {{ song["rank"] }} · {{ song["year"] }} · {{ song["artist"] }}</p>
+        <h1>{{ song["title"] }}</h1>
+        <pre class="lyrics">{{ song["lyrics"] }}</pre>
+      </article>
+    </main>
+  </body>
+</html>
